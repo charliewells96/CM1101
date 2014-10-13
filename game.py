@@ -26,8 +26,8 @@ def remove_punct(text):
             new_string += char
 
     return new_string
-    
-    
+
+
 def remove_spaces(text):
     """This function is used to remove leading and trailing spaces from a string.
     It takes a string and returns a new string with does not have leading and
@@ -44,8 +44,7 @@ def remove_spaces(text):
     >>> remove_spaces("   ")
     ''
     """
-    
-
+    pass
 
 
 def normalise_input(user_input):
@@ -62,7 +61,7 @@ def normalise_input(user_input):
     """
     pass
 
-    
+
 def display_room(room):
     """This function takes a room as an input and nicely displays its name
     and description. The room argument is a dictionary with entries "name",
@@ -89,7 +88,7 @@ def display_room(room):
     print(room["description"])
     print()
 
-    
+
 def exit_leads_to(exits, direction):
     """This function takes a dictionary of exits and a direction (a particular
     exit taken from this dictionary). It returns the name of the room into which
@@ -102,10 +101,8 @@ def exit_leads_to(exits, direction):
     >>> exit_leads_to(rooms["Tutor"]["exits"], "west")
     'Reception'
     """
-    room = rooms[exits[direction]]
-    leads_to = room["name"]
-    return leads_to
-    
+    return rooms[exits[direction]]["name"]
+
 
 def print_menu_line(direction, leads_to):
     """This function prints a line of a menu of exits. It takes a direction (the
@@ -139,7 +136,7 @@ def print_menu(exits):
     Where do you want to go?
     """
     print("You can:")
-    
+
     for e in exits:
         print_menu_line(e, exits[e])
 
@@ -177,14 +174,14 @@ def menu(exits):
 
     # Repeat until the player enter a valid choice
     while True:
-        
+
         print_menu(exits)
         go_next = input("Where would you like to go next? ")
 
         if is_valid_exit(exits, go_next):
             return go_next
         # COMPLETE THIS PART:
-        
+
         # Display menu
 
         # Read player's input
@@ -209,8 +206,8 @@ def move(exits, direction):
     >>> move(rooms["Reception"]["exits"], "west") == rooms["Office"]
     False
     """
-    next_room = rooms[exits[direction]]
-    return next_room
+    return rooms[exits[direction]]
+
 
 # This is the entry point of our program
 def main():
