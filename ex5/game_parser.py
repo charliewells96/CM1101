@@ -89,7 +89,7 @@ def normalise_input(user_input):
 
     user_input = remove_punct(user_input).lower()
 
-    user_input.split()
+    user_input = user_input.split()
 
     for word in user_input:
         word.strip()
