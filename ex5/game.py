@@ -24,8 +24,6 @@ def list_of_items(items):
     'money, a student handbook, laptop'
 
     """
-    for item in item s s 
-
 
 
 def print_room_items(room):
